@@ -1,0 +1,12 @@
+{
+  "name": "express-examples",
+  "description": "Examples using Express",
+  "version": "0.0.1",
+  "repository": "https://github.com/logan70/express-examples.git",
+  "bugs": "https://github.com/logan70/express-examples/issues",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Logan <im.lizhh@gmail.com>",
+  "license": "MIT"
+}
