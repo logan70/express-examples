@@ -10,7 +10,9 @@
   "author": "Logan <im.lizhh@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "doctoc": "^1.4.0",
     "express": "^4.17.1",
-    "express-generator": "^4.16.1"
+    "express-generator": "^4.16.1",
+    "pug": "^3.0.0"
   }
 }
