@@ -16,8 +16,13 @@ app.listen(port, () => {
 });
 ```
 运行该文件
-
-`node index.js`
+```
+// Mac 或 Linux :
+DEBUG=express:* node index.js
+//Window
+set DEBUG=express:* & node index.js
+```
+ps: `DEGUG=express:*` 是为了能够看到 Express 内部的所有日志
 
 应用程序会启动服务器，并监听端口3000。并以“Hello Express!”来响应针对根路由的请求。
 
