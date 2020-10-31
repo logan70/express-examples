@@ -4,6 +4,7 @@ A repository containing small examples to illustrate the use of Express for crea
 
 ## TODO
 
-- [ ] express-starter - A minimal boilerplate of express development
+- [x] [express-starter - A minimal boilerplate of express development](./examples/starter)
 - [x] error - error handling
 - [ ] auth - middleware base auth example
+- [x] [routing](./examples/routing)
