@@ -10,11 +10,13 @@ cd express-typescript
 npm init -y
 ```
 
-- 安装express、typescript、nodemon(用于直接运行ts文件，并监听文件变化重启server)
+- 安装express、typescript、ts-node、nodemon
+`ts-node`用于直接运行ts文件
+`nodemon` 用于监听文件变化重启server
 
 ```bash
 npm i express -S
-npm i typescript nodemon -D
+npm i typescript nodemon ts-node -D
 ```
 
 - 安装node及express的typescript声明库
