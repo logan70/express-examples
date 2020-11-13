@@ -8,14 +8,9 @@ type RandomDie {
   rollOnce: Int!
   roll(numRolls: Int!):[Int]
 }
-type Mutation {
-  setMessage(message:String): String
-}
 type Query {
   getDie(numSides:Int):RandomDie
-  getMessage: String
 }
-
 `);
 
 class RandomDie {
@@ -23,24 +18,20 @@ class RandomDie {
     this.numSides = numSides;
   }
   rollOnce() {
-    return 1;
+    return 1 + Math.floor(Math.random() * this.numSides);
   }
   roll({ numRolls }) {
-    return [numRolls];
+    const output = [];
+    for (let i = 0; i < numRolls; i++) {
+      output.push(this.rollOnce());
+    }
+    return output;
   }
 }
 
-let fakeDatabase = {};
 const root = {
   getDie: ({ numSides }) => {
     return new RandomDie(numSides || 6);
-  },
-  getMessage: () => {
-    return fakeDatabase.message;
-  },
-  setMessage: ({ message }) => {
-    fakeDatabase.message = message;
-    return message;
   },
 };
 
