@@ -129,24 +129,55 @@ const root = {
 
 ## 变更和输入类型
 当 API 用于修改数据时，把入口端点做为 `Mutation` 而不是 `Query`。
+
+如果有多个接口使用相同的输入参数，可以使用“输入类型”来简化 schema，使用`input` 关键字而不是`type`。
 ```javascript
 const schema = buildSchema(`
-type Mutation {
-  setMessage(message: String): String
+input MessageInput {
+  content: String,
+  author: String
 }
-
+type Message {
+  id: ID!,
+  content: String,
+  author: String,
+}
+type Mutation {
+  createMessage(input: MessageInput): Message,
+  updateMessage(id: ID!,input: MessageInput): Message
+}
 type Query {
-  getMessage: String
+  getMessage(id:ID!): Message
 }
 `);
+class Message{
+  constructor(id, {author, content}){
+    this.id = id;
+    this.author = author;
+    this.content = content;
+  }
+}
 const fakeDatabase = {};
 const root = {
-  setMessage: ({message}) => {
-    fakeDatabase.message = message;
-    return message;
+  getMessage: ({id}) => {
+    if(!fakeDatabase[id]){
+      throw new Error('no message with id:' + id);
+    }else{
+      return new Message(id, fakeDatabase[id]);
+    }
   },
-  getMessage: () => {
-    return fakeDatabase.message;
+  createMessage: ({input}) => {
+    const id = require('crypto').randomBytes(10).toString('hex')
+    fakeDatabase[id] = input;
+    return new Message(id, fakeDatabase[id]);
+  },
+  updateMessage: ({id, input}) => {
+    if(!fakeDatabase[id]){
+      throw new Error('no message with id:' + id);
+    }else{
+      fakeDatabase[id] = input;
+      return new Message(id, input)
+    }
   }
 }
 ```
