@@ -89,7 +89,7 @@ app.listen(PORT, () => {
 
 ### 发送graphQL请求
 
-运行`npm run dev`启动服务后，就可以通过(http://localhost:3000/graphql)[http://localhost:3000/graphql]访问GraphQL PlayGround
+运行`npm run dev`启动服务后，就可以通过[http://localhost:3000/graphql](http://localhost:3000/graphql)访问GraphQL PlayGround
 
 在左侧描述需要请求的数据类型后，点击中间按钮，右侧就会展示服务端返回数据。
 
