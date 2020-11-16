@@ -134,4 +134,4 @@ app.listen(PORT, () => {
 
 也可以点击页面右侧`DOCS`，查看GraphQL根据Schema自动生成的接口文档
 
-![GraphQL Playground](./playground.png)
+![GraphQL Playground](../express-apollo/playground.png)
