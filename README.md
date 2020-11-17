@@ -10,6 +10,7 @@ A repository containing small examples to illustrate the use of Express for crea
 - [x] [middleware](./examples/middleware)
 - [x] [GraphQL](./examples/express-graphql-server)
 - [x] [Apollo - The most popular GraphQL server](./examples/express-apollo)
+- [x] [Type GraphQL - Write GraphQL API with only typescript](./examples/express-type-graphql)
 - [ ] 日志
 - [ ] 打点上报
 - [ ] 单元测试
