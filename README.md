@@ -22,5 +22,4 @@ A repository containing small examples to illustrate the use of Express for crea
 - [ ] 跨域处理
 - [ ] API 鉴权
 - [ ] RPC
-- [ ] SSR
 - [ ] 用 pm2 进行项目的管理部署
