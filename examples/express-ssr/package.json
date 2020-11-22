@@ -1,0 +1,22 @@
+{
+  "name": "express-ssr",
+  "version": "1.0.0",
+  "description": "```bash\r npm init -y\r npm install react react-dom next -S\r // 创建文件夹 pages\r mkdir pages\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "set NODE_ENV=production && node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "isomorphic-unfetch": "^3.1.0",
+    "next": "^10.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}

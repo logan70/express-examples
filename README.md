@@ -11,6 +11,7 @@ A repository containing small examples to illustrate the use of Express for crea
 - [x] [GraphQL](./examples/express-graphql-server)
 - [x] [Apollo - The most popular GraphQL server](./examples/express-apollo)
 - [x] [Type GraphQL - Write GraphQL API with only typescript](./examples/express-type-graphql)
+- [x] [SSR by next.js](./examples/express-ssr)
 - [ ] 日志
 - [ ] 打点上报
 - [ ] 单元测试
