@@ -32,15 +32,16 @@ const accessLogStreamRotating = rfs.createStream("access.log", {
 });
 
 // 错误响应 输出到控制台
-// app.use(
-//   morgan("dev", {
-//     skip: function (req, res) {
-//       return res.statusCode < 400;
-//     },
-//   })
-// );
+app.use(
+  morgan("dev", {
+    skip: function (req, res) {
+      return res.statusCode < 400;
+    },
+  })
+);
 
-// app.use(morgan("combined", { stream: accessLogStreamRotating })); // dev, combined, common, short, tiny
+app.use(morgan("combined", { stream: accessLogStreamSingle })); // dev, combined, common, short, tiny
+app.use(morgan("combined", { stream: accessLogStreamRotating })); // dev, combined, common, short, tiny
 
 app.get("/", (req, res) => {
   res.send("Hello Express!");
